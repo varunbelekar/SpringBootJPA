@@ -51,5 +51,6 @@ public class StudentController {
 	@RequestMapping("/update/{id}")
 	public String updateStudent(@PathVariable int id){
 		return "";
+		
 	}
 }
