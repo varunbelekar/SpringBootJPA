@@ -47,4 +47,9 @@ public class StudentController {
 		student.deleteById(id);
 		return "redirect:/view";
 	}
+	
+	@RequestMapping("/update/{id}")
+	public String updateStudent(@PathVariable int id){
+		return "";
+	}
 }
