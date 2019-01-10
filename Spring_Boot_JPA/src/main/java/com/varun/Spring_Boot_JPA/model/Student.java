@@ -2,6 +2,7 @@ package com.varun.Spring_Boot_JPA.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 public class Student {
