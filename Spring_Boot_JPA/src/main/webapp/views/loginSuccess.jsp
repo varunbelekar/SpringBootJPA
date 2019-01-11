@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,17 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>StudentForm</h3>
-<form action="process">
-	Enter id:<br>
-	<input type="text" name="id"><br>
-	Enter password:<br>
-	<input type="password" name="password"><br>
-	Enter name:<br>
-	<input type="text" name="name"><br>
-	Enter technology:<br>
-	<input type="text" name="tech"><br>
-	<input type="submit" value="submit">
-</form>
+<c:if test="${empty loggedInUser}">
+	<h3>Access Denied</h3>
+</c:if>
+LoginSuccess!
 </body>
 </html>

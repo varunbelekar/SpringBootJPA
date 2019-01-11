@@ -7,16 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>StudentForm</h3>
-<form action="process">
-	Enter id:<br>
-	<input type="text" name="id"><br>
+<h3>Login</h3>
+<form action="login" method="post">
+	Enter username:<br>
+	<input type="text" name="name"><br>
 	Enter password:<br>
 	<input type="password" name="password"><br>
-	Enter name:<br>
-	<input type="text" name="name"><br>
-	Enter technology:<br>
-	<input type="text" name="tech"><br>
 	<input type="submit" value="submit">
 </form>
 </body>

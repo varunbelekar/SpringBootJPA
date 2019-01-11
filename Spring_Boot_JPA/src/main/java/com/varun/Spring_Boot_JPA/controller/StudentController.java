@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.varun.Spring_Boot_JPA.dao.StudentDAO;
 import com.varun.Spring_Boot_JPA.model.Student;
@@ -62,5 +63,22 @@ public class StudentController {
 		student.updateStudent(s.getName(), s.getTech(),s.getId());
 		System.out.println(s.getId()+" "+s.getName()+" "+s.getTech());
 		return "redirect:/view";
+	}
+	
+	@RequestMapping("/loginPage")
+	public String getLoginPage(){
+		return "login";
+	}
+	
+	@RequestMapping("/login")
+	public String checkLogin(@RequestParam String name,@RequestParam String password,Model model){
+		Student s=student.checkLogin(name, password);
+		if(s!=null){
+			model.addAttribute("loggedInUser",s.getName());
+		}
+		if(s==null){
+			return "redirect:/view";
+		}
+		return "loginSuccess";
 	}
 }
