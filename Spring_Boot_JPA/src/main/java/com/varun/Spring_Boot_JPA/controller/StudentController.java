@@ -73,12 +73,15 @@ public class StudentController {
 	@RequestMapping("/login")
 	public String checkLogin(@RequestParam String name,@RequestParam String password,Model model){
 		Student s=student.checkLogin(name, password);
+		System.out.println("temp");
 		if(s!=null){
 			model.addAttribute("loggedInUser",s.getName());
 		}
 		if(s==null){
 			return "redirect:/view";
 		}
+		
+		
 		return "loginSuccess";
 	}
 }
